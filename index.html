@@ -13,40 +13,25 @@
     <div id="root"></div>
 </body>
 <script>
+    const Button = (color, text) => React.createElement('button', {
+        className: "btn btn-outline-" + color,
+        children: text,
+        onClick: () => { alert("le diste a " + text)}
+    })
+    const Content = (tag,className,children) => React.createElement(tag, { className, children })
     const App = React.createElement('header', {
         id: "header",
         className: "p-3 | min-vh-100 | text-center",
         children: [
-            React.createElement('h1', {
-                className: "display-1",
-                children: "ReactJS Development",
-            }),
-            React.createElement("p", {
-                className: "h1 fw-light",
-                children: "Bienvenidos al sitio"
-            }),
-            React.createElement('div', {
-                className: "btn-group",
-                children: [
-                    React.createElement('button', {
-                        className: "btn btn-outline-primary",
-                        children: "Me Gusta",
-                        onClick: () => { alert("le diste a Me Gusta")}
-                    }),
-                    React.createElement('button', {
-                        className: "btn btn-outline-danger",
-                        children: "Me Encanta",
-                        onClick: () => { alert("le diste a Me Encanta")}
-                    }),
-                    React.createElement('button', {
-                        className: "btn btn-outline-secondary",
-                        children: "Compartir",
-                        onClick: () => { alert("le diste a Compartir")}
-                    })
-                ]
-            })
+            Content("h1", "display-1", "ReactJS Development"),
+            Content("p", "h1 fw-light", "Bienvenidos al sitio"),
+            Content('div', "btn-group",[
+                Button('primary', "me gusta"),
+                Button('danger', "me encanta"),
+                Button('secondary', "compartir"),
+            ])
         ]
-    })
+    });
     ReactDOM
     .createRoot(document.getElementById('root'))
     .render(App)
