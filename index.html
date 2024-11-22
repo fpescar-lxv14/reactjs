@@ -13,10 +13,39 @@
     <div id="root"></div>
 </body>
 <script>
-    const App = React.createElement('h1', {
+    const App = React.createElement('header', {
         id: "header",
-        className: "p-3 | display-1 bg-secondary",
-        children: "Bienvenidos al sitio"
+        className: "p-3 | min-vh-100 | text-center",
+        children: [
+            React.createElement('h1', {
+                className: "display-1",
+                children: "ReactJS Development",
+            }),
+            React.createElement("p", {
+                className: "h1 fw-light",
+                children: "Bienvenidos al sitio"
+            }),
+            React.createElement('div', {
+                className: "btn-group",
+                children: [
+                    React.createElement('button', {
+                        className: "btn btn-outline-primary",
+                        children: "Me Gusta",
+                        onClick: () => { alert("le diste a Me Gusta")}
+                    }),
+                    React.createElement('button', {
+                        className: "btn btn-outline-danger",
+                        children: "Me Encanta",
+                        onClick: () => { alert("le diste a Me Encanta")}
+                    }),
+                    React.createElement('button', {
+                        className: "btn btn-outline-secondary",
+                        children: "Compartir",
+                        onClick: () => { alert("le diste a Compartir")}
+                    })
+                ]
+            })
+        ]
     })
     ReactDOM
     .createRoot(document.getElementById('root'))
