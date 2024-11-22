@@ -1,0 +1,22 @@
+{
+  "name": "react-lxv14",
+  "version": "1.0.0",
+  "private": true,
+  "description": "react-lxv14",
+  "author": "Cristian Racedo",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
