@@ -1,5 +1,6 @@
 // Recursos
 import "./index.css";
+import "./App.css";
 import reactLogo from "./assets/react.svg";
 import menu from "./assets/menu.json";
 import social from "./assets/social.json";

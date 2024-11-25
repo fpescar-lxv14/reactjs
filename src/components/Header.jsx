@@ -6,12 +6,12 @@ class Header extends Component {
         this.state = { reloads: 1 }
     }
     shouldComponentUpdate(){ // El Componente debe Actualizarse
-        return false
+        return false 
     }
-    render(){
+    render(){ // El componente se Renderizo
         return(
         <header>
-            <img src={this.props.icon}/>
+            <img className="logo" src={this.props.icon}/>
             <h1>{this.props.title}</h1>
             <p>{this.props.subtitle}</p>
         </header>

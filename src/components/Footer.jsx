@@ -12,5 +12,4 @@ function Footer(props){
         <p>&copy;{year} Todos los derechos reservados {author}</p>
     </footer>
 )}
-
 export default Footer;
