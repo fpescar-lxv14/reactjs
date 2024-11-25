@@ -1,0 +1,14 @@
+[
+    {
+        "link": "#", 
+        "text": "inicio"
+    },
+    {
+        "link": "#services", 
+        "text": "servicios"
+    },
+    {
+        "link": "#contact", 
+        "text": "contacto"
+    }
+  ]

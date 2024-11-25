@@ -1,0 +1,14 @@
+[
+    { 
+    "link": "https://facebook.com/profile", 
+    "text": "facebook"
+    },
+    { 
+    "link": "https://instagram/profile", 
+    "text": "instagram"
+    },
+    { 
+    "link": "https://api.whatsapp.com/send?phone=1103030456&text=Buenos+dias,+quisiera+hacer+una+consulta...", 
+    "text": "whatsapp"
+    }
+]
