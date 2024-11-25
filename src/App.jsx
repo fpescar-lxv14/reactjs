@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from './components/Header';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import reactLogo from "./assets/react.svg"
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const social = [
+    { 
+      link: "https://facebook.com/profile", 
+      text: "facebook"
+    },
+    { 
+      link: "https://instagram/profile", 
+      text: "instagram"
+    },
+    { 
+      link: "https://api.whatsapp.com/send?phone=1103030456&text=Buenos+dias,+quisiera+hacer+una+consulta...", 
+      text: "whatsapp"
+    }
+  ]
+  const menu = [
+    {
+      link: "#", text: "inicio"
+    },
+    {
+      link: "#services", text: "servicios"
+    },
+    {
+      link: "#contact", text: "contacto"
+    }
+  ]
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Nav title="RJS" links={menu}/>
+    <Header 
+      title="ReactJS"
+      subtitle="Bienvenidos al Sitio"
+      icon={reactLogo}/>
+    <Footer
+      author="Cristian & Compañia"
+      social={social} />
     </>
-  )
-}
+)}
 
 export default App
