@@ -1,35 +1,29 @@
 import { Component } from "react";
 
 class Header extends Component {
-    constructor(props){
+    constructor(props){ 
         super(props)
-        this.state = {
-            reloads: 1,
-        }
+        this.state = { reloads: 1 }
     }
-    // componentWillMount(){
-    //     console.log("se esta por montar el componente");
-    // }
-    // componentWillUpdate(){
-    //     console.log("el componente va a recibir actualizaciones")
-    // }
+    shouldComponentUpdate(){ // El Componente debe Actualizarse
+        return false
+    }
     render(){
-        console.log("el componente ha sido creado")
-    return(
+        return(
         <header>
-            <img 
-                src={this.props.icon} 
-                alt="Icono de aplicacion"/>
-            {console.log("estoy al dia")}
+            <img src={this.props.icon}/>
             <h1>{this.props.title}</h1>
             <p>{this.props.subtitle}</p>
         </header>
     )}
-    componentDidMount(){
-        console.log("Ya se creo el Componente")
+    componentDidMount(){ // El Componente se Monto
+        this.setState(prev => ({ reloads: prev.reloads + 1 }))
     }
-    componentWillUnmount(){
-        console.log("Se esta por eliminar el componente")
+    componentDidUpdate(){ // El Componente se Actualizo
+        console.log(`Actualizado ${this.state.reloads} veces`);
+    }
+    componentWillUnmount(){ // El componente se va a Desmontar
+        console.log("Se va a desmontar el componente")
     }
 }
 
