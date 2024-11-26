@@ -1,12 +1,13 @@
 import { Component } from "react";
+import Button from "./Button";
 
 class Header extends Component {
     constructor(props){ 
         super(props)
-        this.state = { reloads: 1 }
+        this.state = { reloads: 0 }
     }
-    shouldComponentUpdate(){ // El Componente debe Actualizarse
-        return false 
+    shouldComponentUpdate(){ // El Componente debe Actualizarse 
+        return false
     }
     render(){ // El componente se Renderizo
         return(
@@ -14,6 +15,9 @@ class Header extends Component {
             <img className="logo" src={this.props.icon}/>
             <h1>{this.props.title}</h1>
             <p>{this.props.subtitle}</p>
+            <Button text="me gusta" />
+            <Button text="me encanta" />
+            <Button text="me divierte" />
         </header>
     )}
     componentDidMount(){ // El Componente se Monto
@@ -26,5 +30,4 @@ class Header extends Component {
         console.log("Se va a desmontar el componente")
     }
 }
-
 export default Header;

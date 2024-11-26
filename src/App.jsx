@@ -18,9 +18,6 @@ function App() {
       title="ReactJS"
       subtitle="Bienvenidos al Sitio"
       icon={reactLogo}/>
-    <Button text="me gusta" />
-    <Button text="me encanta" />
-    <Button text="me divierte" />
     <Footer
       author="Cristian & Compañia"
       social={social} />
