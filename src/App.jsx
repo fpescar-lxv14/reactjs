@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ControlPanel } from "./components/ControlPanel"
 
 function App() {
   const board = Array.from({length:3}).map(_=>Array.from({length:3}).map(_=> ""))
@@ -19,12 +20,7 @@ function App() {
   return (
     <>
       <h1>Ta-Te-Ti</h1>
-      <ul className="control-panel">
-      { Object.entries(state).map(([k,v],i) => 
-        typeof v !== "object" &&
-        <li key={i}><strong>{k}: </strong>{v ?? "-"}</li>
-      )}
-      </ul>
+      <ControlPanel {...state}/>
       <div className="tic-tac-toe">
       { state.board.flat().map((item,i) => 
         <button key={i} onClick={changePlayer}>{item} {i}</button>
