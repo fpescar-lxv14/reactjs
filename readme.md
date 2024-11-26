@@ -7,3 +7,4 @@ __Biblioteca desarrollada por el equipo de facebook (meta)__ centrada en facilit
 * __Rendimiento__: Gracias al VirtualDOM (copia en memoria del DOM), las aplicaciones son eficientes, ya que ante un cambio renderizan las partes modificadas.
 
 * [Caracteristicas Generales](./docs/general.md)
+* [Ciclo de Vida de Componentes](./docs/lifecycle.md)
