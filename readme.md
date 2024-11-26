@@ -5,3 +5,5 @@ __Biblioteca desarrollada por el equipo de facebook (meta)__ centrada en facilit
 * __Declarativo__: Utiliza una sintaxis sencilla donde se indica que debe realizarse, sin necesidad de explicar el como.
 * __Componentes__: Simplica la logica de aplicacion mediante la reutilizacion de bloques de codigo.
 * __Rendimiento__: Gracias al VirtualDOM (copia en memoria del DOM), las aplicaciones son eficientes, ya que ante un cambio renderizan las partes modificadas.
+
+* [Caracteristicas Generales](./docs/general.md)
