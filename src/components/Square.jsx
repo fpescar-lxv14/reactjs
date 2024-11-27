@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function Button({row, col, currentPlayer:cP, fn}){
+export function Button({row, col, currentPlayer:cP, fn, status}){
     const [icon, setIcon] = useState()
     const fill = () => {
     if(!icon) {
@@ -8,5 +8,5 @@ export function Button({row, col, currentPlayer:cP, fn}){
         fn && fn(row,col,cP)
     }}
     return (
-    <button onClick={fill} disabled={icon}>{icon}</button>
+    <button onClick={fill} disabled={icon || status}>{icon}</button>
 )}

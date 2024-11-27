@@ -33,3 +33,10 @@
     opacity: .5;
     z-index: -1;
 }
+.control{
+    display: block;
+    margin: 1rem auto;
+    padding: .4rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
