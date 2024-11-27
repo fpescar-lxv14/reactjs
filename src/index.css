@@ -6,6 +6,12 @@
     font-family: sans-serif;
     color-scheme: dark;
 }
+body{
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
 .tic-tac-toe{
     max-width: calc(3.5rem * 3 + 1.5rem);
     display: grid;
