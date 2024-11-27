@@ -1,12 +1,6 @@
-import { useState } from "react"
-
-export function Button({row, col, currentPlayer:cP, fn, status}){
-    const [icon, setIcon] = useState()
-    const fill = () => {
-    if(!icon) {
-        setIcon(cP)
-        fn && fn(row,col,cP)
-    }}
+export function Button(props){
+    const { icon, row, col, currentPlayer:value, fn, status } = props
+    const handleClick = () => (!icon) && fn && fn({row,col,value})
     return (
-    <button onClick={fill} disabled={icon || status}>{icon}</button>
+    <button onClick={handleClick} disabled={icon||status}>{icon}</button>
 )}
