@@ -8,3 +8,4 @@ __Biblioteca desarrollada por el equipo de facebook (meta)__ centrada en facilit
 
 * [Caracteristicas Generales](./docs/general.md)
 * [Ciclo de Vida de Componentes](./docs/lifecycle.md)
+* [Funciones de Manipulacion](./docs/hooks.md)
