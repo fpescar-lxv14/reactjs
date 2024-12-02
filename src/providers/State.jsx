@@ -8,9 +8,11 @@ export const StateProvider = ({children}) => {
     const setParam = (k,v) => setSearch(prev =>({...prev,[k]:v}));
     const searchResults = async() => {
         try {
-            const results = await fetch(urlQuery(search));
-            const data = await results.json()
-            setResults(data)
+            if (search.q.length > 2){
+                const results = await fetch(urlQuery(search));
+                const data = await results.json()
+                setResults(data)
+            }
         } catch (err){ setResults(err) }}
     useEffect(() => { searchResults() }, [search])
     return(
