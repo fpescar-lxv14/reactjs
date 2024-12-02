@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router";
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Signin from "./components/Signin";
+import Home from "./Home";
+import Login from "./Login";
+import Signin from "./Signin";
+import NotFound from "./NotFound";
 
 export default function AppRouter(){
     return(

@@ -1,4 +1,6 @@
 import { BrowserRouter } from "react-router"
+import Nav from "./components/Nav"
+import AppRouter from "./components/AppRouter"
 
 function App() {
   return (
