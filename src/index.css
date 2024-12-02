@@ -73,3 +73,6 @@
     align-items: center;
     gap: .5rem;
 }
+.button:disabled{
+    opacity: .5;
+}

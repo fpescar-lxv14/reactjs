@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { StateContext } from "../providers/State"
+import Button from "./Button"
 
 export default function Pagination() {
     const { results:{ pagination }, setParam, search } = useContext(StateContext)
@@ -12,11 +13,11 @@ export default function Pagination() {
     const nextPage = () => setParam('offset', o+count)
 return (
     <ul className="pagination">
-        <li><button onClick={prevPage} disabled={offset <= 0}>&lt;</button></li>
+        <li><Button onClick={prevPage} disabled={offset <= 0} text="<" /></li>
         <li><strong>Resultados: </strong>{total_count}</li>
         <li><strong>Paginas: </strong>{total_pages}</li>
         <li><strong>Pagina actual: </strong>{current_page}</li>
-        <li><button onClick={nextPage} disabled={current_page >= total_pages}>&gt;</button></li>
+        <li><Button onClick={nextPage} disabled={current_page >= total_pages} text=">" /></li>
     </ul>
     
 )}
