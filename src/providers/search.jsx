@@ -13,3 +13,12 @@ export const defaultSearch = {
 }
 export const urlQuery = ({q,limit,offset,rating,lang,bundle}) => 
     `${Search}api_key=${key}&q=${q}&limit=${limit}&offset=${offset}&rating=${rating}&lang=${lang}&bundle=${bundle}`
+export const defaultResults = {
+    data: [],
+    metadata: {},
+    pagination: {
+        total_count: 0, 
+        count: 20,
+        offset: 0
+    }
+}
