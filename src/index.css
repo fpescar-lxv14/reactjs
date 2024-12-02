@@ -1,0 +1,34 @@
+.steps{
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    width: 100%;
+    height: .25rem;
+    background-color: #36c;
+}
+.steps > *{
+    position: absolute;
+    top: -.75rem;
+    translate: -50% 0;
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: .5rem;
+    line-height: .5rem;
+    border: .15rem solid;
+    font-weight: bold;
+    color: #36c8;
+    transition: all .5s ease;
+}
+.steps :first-child{
+    left: 25%;
+}
+.steps :nth-child(2){
+    left: 50%;
+}
+.steps :last-child{
+    left: 75%;
+}
+.steps .active{
+    color: #36c;
+    scale: 1.25;
+}
