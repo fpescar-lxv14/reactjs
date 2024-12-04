@@ -6,7 +6,11 @@ import NotFound from "./components/NotFound.jsx"
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      <nav style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: ".5rem"
+      }}>
         {/* Links de Navegacion (api History) */}
         <NavLink to="/home">Inicio</NavLink>
         <NavLink to="/gallery">Galeria</NavLink>
