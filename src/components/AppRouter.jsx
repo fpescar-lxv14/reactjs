@@ -1,15 +1,10 @@
 import { Routes, Route } from "react-router";
-import Home from "./Home";
-import Login from "./Login";
-import Signin from "./Signin";
-import NotFound from "./NotFound";
 
-export default function AppRouter(){
+export default function AppRouter({routes}){
     return(
     <Routes>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signin" element={<Signin/>}/>
-        <Route path="/*" element={<NotFound/>}/>
+    { routes?.map(({paths, Element}) => paths?.map((p,idx) => 
+        <Route key={idx} path={p} element={<Element/>}/>
+    ))}
     </Routes>
 )}
