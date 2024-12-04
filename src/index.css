@@ -19,15 +19,6 @@
     color: #36c8;
     transition: all .5s ease;
 }
-.steps :first-child{
-    left: 25%;
-}
-.steps :nth-child(2){
-    left: 50%;
-}
-.steps :last-child{
-    left: 75%;
-}
 .steps .active{
     color: #36c;
     scale: 1.25;

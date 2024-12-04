@@ -3,7 +3,9 @@ export const Steps = ({goToStep, total, stage}) =>
 { Array.from({length: total}).map((_, i) => {
     const step = i + 1
     return (
-    <button key={i} className={step === stage ? "active" : ""} 
+    <button key={i} 
+        style={{left: `${step * 100 / (total + 1)}%`}}
+        className={step === stage ? "active" : ""} 
         onClick={() => goToStep(step)}>
         {step}
     </button> 
