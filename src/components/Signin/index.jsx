@@ -6,7 +6,7 @@ import PayInfo from "./PayInfo";
 
 export default function Signin() {
     const { stage, ...steps } = useSteps(1,3);
-    const info = { total: 3, ...steps }
+    const info = { total: 3, stage, ...steps }
     return (
     <section className="container py-5 p-3 position-relative">
         <Steps {...info}/>

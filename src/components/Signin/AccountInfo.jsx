@@ -1,4 +1,4 @@
-export default AccountInfo = ({prevStep, nextStep}) =>
+const AccountInfo = ({prevStep, nextStep}) =>
 <div className="d-grid gap-2">
     <h3>Etapa 1: Datos de la Cuenta </h3>
     <fieldset className="form-floating">
@@ -37,3 +37,4 @@ export default AccountInfo = ({prevStep, nextStep}) =>
         Siguiente
     </button>
 </div>
+export default AccountInfo;

@@ -1,5 +1,5 @@
-export default UserInfo = ({prevStep, nextStep}) => 
-<div className={stage === 2 ? "d-grid gap-2" : "d-none"}>
+const UserInfo = ({prevStep, nextStep}) => 
+<div className="d-grid gap-2">
     <h3>Etapa 2: Datos Personales </h3>
     <fieldset className="d-flex gap-2">
         <div className="form-floating col">
@@ -57,3 +57,4 @@ export default UserInfo = ({prevStep, nextStep}) =>
     <button onClick={prevStep} className="btn btn-secondary">Anterior</button>
     <button onClick={nextStep} className="btn btn-primary">Siguiente</button>
 </div>
+export default UserInfo;

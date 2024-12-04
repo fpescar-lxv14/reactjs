@@ -1,6 +1,6 @@
 import Home from "../components/Home"
 import Login from "../components/Login"
-import Signin from "../components/Signin"
+import Signin from "../components/Signin/"
 import NotFound from "../components/NotFound"
 
 export const appRoutes = [
