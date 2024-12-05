@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 
 export default function SessionData(){
     const session = useSelector(state => state.session)
-    console.log(session)
     return(
     <ul>
     { Object.entries(session).map(([k,v],i) => 
