@@ -1,11 +1,12 @@
-import Counter from "./components/Counter"
-import Session from "./components/Session/"
+import { BrowserRouter } from "react-router"
+import Nav from "./components/Nav"
+import AppRouter from "./components/AppRouter"
 function App() {
   return (
-    <>
-      <Counter/>
-      <Session/>
-    </>
+    <BrowserRouter>
+      <Nav/>
+      <AppRouter/>
+    </BrowserRouter>
   )
 }
 export default App
