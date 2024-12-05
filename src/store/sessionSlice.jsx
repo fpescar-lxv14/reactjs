@@ -9,10 +9,14 @@ export const sessionSlice = createSlice({
             const [key, value] = action.payload;
             state[key] = value;
         },
-        reset: () => initialState
+        reset: () => initialState,
+        saveSession: (state) => localStorage.setItem("session", JSON.stringify(state)),
+        loadSession: (state) => state = {...state, ...localStorage.getItem("session")}
     }
 })
 export const {
     setvalue,
     reset,
+    loadSession,
+    saveSession,
 } = sessionSlice.actions
