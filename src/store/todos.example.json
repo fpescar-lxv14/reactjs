@@ -1,25 +1,26 @@
 {
     "todos": [
         {
-            "id": 0,
+            "id": 1,
             "title": "Aprender HTML",
             "description": "Lenguaje de marcado de hipertexto que utiliza etiquetas para definir cada uno de los elementos que componen una pagina web, tambien pueden poseer atributos que describen caracteristicas de las mismas.",
             "completed": true
 
         },
         {
-            "id": 1,
+            "id": 2,
             "title": "Implementar CSS",
             "description": "Lenguaje de hojas de estilo en cascada que define la apariencia de los elementos de una pagina web, utiliza selectores y reglas para implementar los estilos",
             "completed": true
 
         },
         {
-            "id": 2,
+            "id": 3,
             "title": "Entrenar el arte de JS",
             "description": "Dominar los jutsus de arrays y objetos y el arte secretos de las apis integradas en los navegadores",
             "completed": false
         }
     ],
-    "filtered": []
+    "filtered": [],
+    "current": null
 }
