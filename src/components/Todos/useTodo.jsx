@@ -9,7 +9,7 @@ export function useTodo () {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
         if (!current){
-            data.id = Number(todos[todos.length - 1]?.id) + 1 ?? 1
+            data.id = Number(todos[todos.length - 1]?.id) + 1 || 1
             data.completed = 0
             dispatch(addTodo(data))
         }
@@ -19,6 +19,6 @@ export function useTodo () {
         }
         e.target.reset();
     }
-    const get = (key) => current ? todos.find(item => current === item.id)[key] : ""
+    const get = (key) => current ? todos.find(item => current === item.id)[key] : undefined
     return { handleSubmit, get }
 }

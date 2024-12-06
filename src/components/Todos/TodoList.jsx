@@ -1,30 +1,30 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrent, removeTodo, editTodo } from "../../store/todosSlice";
-import { useId } from "react";
+import { Card, CardContent, CardActions, Button, Checkbox, FormControlLabel, Typography, Container } from "@mui/material";
 
 export default function TodoList() {
     const { todos, filtered } = useSelector(s => s.todos)
     const data = filtered.length ? filtered : todos
     return (
-    <ul>{ 
-        data?.map(item => <ItemList key={item.id} {...item}/>
-    )}
-    </ul>
+    <Container sx={{display:"grid", gap:"2rem"}}>
+        { data?.map(item => <ItemList key={item.id} {...item}/> )}
+    </Container>
 )}
 const ItemList = ({id,title, description,completed}) =>{
     const dispatch = useDispatch()
-    const selfId = useId()
     return (
-    <li id={"todo_"+id}>
-        <p style={{backgroundColor: completed ? "#ec3" : "#eee"}}>
-            <input id={selfId} type="checkbox" onChange={() => dispatch(editTodo({id, completed: !completed}))} checked={completed}/>
-            <label htmlFor={selfId}>
-                <strong>{title}: </strong> {description}
-            </label>
-            <button onClick={()=>dispatch(setCurrent(id))}>Editar</button>
-            <button onClick={()=>dispatch(removeTodo(id))}>Eliminar</button>
-            <hr />
-            { completed ? "finalizada": "pendiente" }
-        </p>
-    </li>
+    <Card id={"todo_"+id} sx={{backgroundColor: completed && "#ccc" }}>
+        <CardContent>
+            <FormControlLabel control={
+                <Checkbox type="checkbox" onChange={() => dispatch(editTodo({id, completed: !completed}))} checked={completed}/> }
+            label={ <> <Typography variant="h6">{title}:</Typography>  <Typography variant="body">{description}</Typography></> }/>
+        </CardContent>
+        <CardActions sx={{justifyContent:"end"}}>
+            <Button color="primary" onClick={()=>dispatch(setCurrent(id))}>Editar</Button>
+            <Button color="error" onClick={()=>dispatch(removeTodo(id))}>Eliminar</Button>
+            <Typography variant="subtitle2">
+                { completed ? "FINALIZADA": "PENDIENTE" }
+            </Typography>
+        </CardActions>
+    </Card>
 )}

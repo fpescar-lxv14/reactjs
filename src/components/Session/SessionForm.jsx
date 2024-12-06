@@ -1,6 +1,7 @@
-import { useDispatch, useSelector } from "react-redux"
-import { setvalue, reset } from "../../store/sessionSlice"
 import { Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux"
+import { setvalue } from "../../store/sessionSlice"
+import { Input, InputLabel } from "@mui/material";
 
 export default function SessionForm(){
     const dispatch = useDispatch()
@@ -11,13 +12,11 @@ export default function SessionForm(){
         <form style={{display: "grid"}}>
         { Object.entries(session).map(([k,v],i) => 
             <Fragment key={i}>
-            <label htmlFor={k}>{k}</label>
-            <input id={k} 
+            <InputLabel htmlFor={k}>{k}</InputLabel>
+            <Input id={k} 
                 type={getType(k)} 
                 onInput={handle}    
-                value={v}
-                autoComplete={1}
-                required={1} />
+                value={v}/>
             </Fragment>
         )}
         </form>

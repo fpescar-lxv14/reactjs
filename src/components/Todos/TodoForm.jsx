@@ -1,20 +1,22 @@
 import { useTodo } from "./useTodo";
-
+import { Button, FormGroup, Input, InputLabel, TextField } from "@mui/material"
 export default function TodoForm() {
     const { get, handleSubmit } = useTodo()
     return (
     <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Titulo</label>
-        <input id="title" 
-            type="text" 
-            name="title" 
-            defaultValue={get("title")}
-            required={true}/>
-        <label htmlFor="description">Descripcion</label>
-        <textarea id="description"  
-            name="description"
-            defaultValue={get("description")}
-            required={true}></textarea>
-        <button>confirmar</button>
+        <FormGroup>
+            <InputLabel htmlFor="title">Titulo</InputLabel>
+            <Input id="title"
+                name="title"
+                defaultValue={get("title")}
+                required={true}/>
+            <InputLabel htmlFor="description">Descripcion</InputLabel>
+            <TextField id="description"
+                name="description"
+                defaultValue={get("description")}
+                required={true}>
+            </TextField>
+            <Button type="submit">confirmar</Button>
+        </FormGroup>
     </form>
 )}

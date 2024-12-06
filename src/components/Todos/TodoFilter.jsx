@@ -1,18 +1,17 @@
 import { useDispatch } from "react-redux"
-import { filterTodos, resetFilter } from "../../store/todosSlice"
+import { filterTodos } from "../../store/todosSlice"
+import { RadioGroup, FormControlLabel, Radio } from "@mui/material"
 
 export default function TodoFilter() {
     const dispatch = useDispatch()
-    const showAll = () => dispatch(resetFilter())
+    const filter = ({target}) => dispatch(filterTodos(target.value))
     return (
-    <div>
-        <input id="all" onChange={showAll} type="radio" name="filtered" />
-        <label htmlFor="all">TODAS</label>
-
-        <input id="completed" onChange={() => dispatch(filterTodos(true))} type="radio" name="filtered" />
-        <label htmlFor="completed">COMPLETADAS</label>
-        
-        <input id="pending" onChange={() => dispatch(filterTodos(false))} type="radio" name="filtered"/>
-        <label htmlFor="pending">INCOMPLETAS</label>
-    </div>
+    <RadioGroup row sx={{justifyContent: "center"}}>
+        <FormControlLabel label="TODAS" value={2}
+            control={<Radio/>} onChange={filter}/>
+        <FormControlLabel label="COMPLETADAS" value={1}
+            control={<Radio/>} onChange={filter}/>
+        <FormControlLabel label="INCOMPLETAS" value={0}
+            control={<Radio/>} onChange={filter}/>
+    </RadioGroup>      
 )}
