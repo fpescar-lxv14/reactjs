@@ -15,7 +15,7 @@ export const todosSlice = createSlice({
             s.todos = s.todos.map(item => item.id === id? {...item,...todo } : item)
         },
         filterTodos: (s,a) => {
-            s.filtered = s.todos.filter((item) => item.completed != a.payload
+            s.filtered = s.todos.filter((item) => item.completed == a.payload
         )},
         resetFilter: (s) => { s.filtered = [] } ,
         setCurrent: (s,a) => { s.current = a.payload }
