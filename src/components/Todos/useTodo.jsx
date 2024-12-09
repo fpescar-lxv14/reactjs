@@ -13,10 +13,9 @@ export function useTodo () {
             data.completed = 0
             dispatch(addTodo(data))
         }
-        else {
-            dispatch(editTodo({id: current, ...data}))
-            dispatch(setCurrent(null))
-        }
+        else dispatch(editTodo({id: current, ...data}))
+        
+        dispatch(setCurrent(null))
         e.target.reset();
     }
     const get = (key) => current ? todos.find(item => current === item.id)[key] : undefined
