@@ -10,3 +10,4 @@ __Biblioteca desarrollada por el equipo de facebook (meta)__ centrada en facilit
 * [Ciclo de Vida de Componentes](./docs/lifecycle.md)
 * [Funciones de Manipulacion](./docs/hooks.md)
 * [Enrutamiento con React-Router](./docs/router.md)
+* [Redux y Redux-Toolkit](./docs/redux.md)
