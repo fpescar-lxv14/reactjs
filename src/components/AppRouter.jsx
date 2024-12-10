@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router";
-import Candidates from "./components/Candidates"
-import Selection from "./components/Selection"
-import Profile from "./components/Profile"
-import Welcome from "./components/Welcome"
-import Error from "./components/Error"
-import FAQs from "./components/FAQs"
+import Candidates from "./components/Candidates.jsx"
+import Selection from "./components/Selection.jsx"
+import Profile from "./components/Profile.jsx"
+import Welcome from "./components/Welcome.jsx"
+import Error from "./components/Error.jsx"
+import FAQs from "./components/FAQs.jsx"
 
 export default function AppRouter(){
     const routes = [
