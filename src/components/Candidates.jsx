@@ -14,7 +14,7 @@ export default function Candidates() {
     return (
     <>{  
         loading ? "...Buscando Candidatos" : 
-        results.map(item => <Card key={item.login.uuid} {...item}/>)
+        results.map(item => <Card key={item.login?.uuid} {...item}/>)
     }
     </>
 )}

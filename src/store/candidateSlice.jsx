@@ -17,11 +17,22 @@ export const getCandidates = createAsyncThunk(
 )
 export const fetchOne = createAsyncThunk(
     'candidates/getOne', 
-    async({url,index}) => request({url, index})
+    async(url) => {
+        try{
+            const response = await fetch(url);
+            const data = await response.json();
+            return data.results;
+        } catch (err) { return err }
+    }
 )
 export const candidateSlice = createSlice({
     name: "candidates",
     initialState,
+    reducers: {
+        rejectCandidate: (state, action) => {
+            state.results = state.results.filter(item => item.login.uuid !== action.payload)
+        }
+    },
     extraReducers: (builder) => 
         builder
         .addCase(getCandidates.pending, (state) => {
@@ -35,12 +46,11 @@ export const candidateSlice = createSlice({
             state.loading = false;
             state.error = action.payload
         })
-        .addCase(fetchOne.pending, (state, action) => {
-            const { index, loading } = action.payload
-            state.results[index] = loading;
-        })
         .addCase(fetchOne.fulfilled, (state, action) => {
-            const { index, ...data } = action.payload;
-            state.results[index] = data
+            console.log(action.payload)
+            state.results = [...state.results, ...action.payload]            
         })
 })
+export const {
+    rejectCandidate,
+} = candidateSlice.actions
