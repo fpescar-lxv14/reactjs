@@ -15,7 +15,8 @@ export default [
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
-    }},
+      },
+    },
     settings: { react: { version: '18.3' } },
     plugins: {
       react,
@@ -29,7 +30,8 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': [
-        'warn', { allowConstantExport: true },
+        'warn',
+        { allowConstantExport: true },
       ],
     },
   },
