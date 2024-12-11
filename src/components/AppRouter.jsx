@@ -11,7 +11,7 @@ export default function AppRouter(){
         { path: "candidates",  element: <Candidates/>  },
         { path: "selection",   element: <Selection/>   },
         { path: "faqs",        element: <FAQs/>        },
-        { path: "profile/:id", element: <Profile/>     },
+        { path: ":menu/:id", element: <Profile/>     },
         { path: "/",           element: <Welcome/>     },
         { path: "*",           element: <Error/>       },
     ]

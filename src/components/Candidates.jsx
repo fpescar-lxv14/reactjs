@@ -10,7 +10,6 @@ export default function Candidates() {
     useEffect(() => {
         !results.length && dispatch(getCandidates(url))
     },[])
-    console.log(results)
     return (
     <>{  
         loading ? "...Buscando Candidatos" : 

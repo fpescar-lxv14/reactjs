@@ -1,13 +1,19 @@
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router";
 import { fetchOne, rejectCandidate } from "../store/candidateSlice";
+import { select } from "../store/selectionSlice";
 
-export default function Card ({login, name, email, phone, cell, picture}){
-    const dispatch = useDispatch()
+export default function Card (props){
     const url = import.meta.env.VITE_URL ?? "https://randomuser.me/api"
+    const { login, name, email, phone, cell, picture } = props
+    const to = useNavigate()
+    const dispatch = useDispatch()
     const reject = () => {
         dispatch(rejectCandidate(login.uuid))
         dispatch(fetchOne(url))
     };
+    const choose = () => dispatch(select(props))
+    const profile = () => to(`${login.uuid}`)
     return(
         <article>
             <img src={picture.large} alt={login.uuid} />
@@ -18,7 +24,7 @@ export default function Card ({login, name, email, phone, cell, picture}){
                 <li><strong>Celular: </strong> <a href={"tel:"+cell}>{cell}</a></li>
             </ul>
             <button onClick={reject}>Rechazar</button>
-            <button>Seleccionar</button>
-            <button>Ver Perfil</button>
+            <button onClick={choose}>Seleccionar</button>
+            <button onClick={profile}>Ver Perfil</button>
         </article>
 )}
