@@ -47,7 +47,6 @@ export const candidateSlice = createSlice({
             state.error = action.payload
         })
         .addCase(fetchOne.fulfilled, (state, action) => {
-            console.log(action.payload)
             state.results = [...state.results, ...action.payload]            
         })
 })
